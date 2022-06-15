@@ -3,6 +3,11 @@
 *   Global design for our app
 */
 
+:root {
+    --success-color: rgb(13, 145, 4);
+    --warning-color: rgb(225, 120, 29);
+}
+
 /**
 * Rules : règles CSS
 */
@@ -45,4 +50,42 @@ table tbody tr td div a {
 table tbody tr td div ul {
     display: none;
     list-style-type: none;
+}
+
+/**
+* Button design
+*/
+a.btn, button.btn {
+    border-radius: .4em;
+    width: 5em;
+    height: 2em;
+    padding: 0.5em;
+    line-height: 2em;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+}
+
+a.btn {
+    display: block;
+}
+a.btn-success, button.btn-success {
+    background-color: var(--success-color);
+    color: #fff;
+}
+
+a.btn-warning, button.btn-warning {
+    background-color: var(--warning-color);
+    color: #fff; 
+}
+
+.menu-trigger[data-expanded] span {
+    display: inline-block;
+}
+.menu-trigger[data-expanded="true"] span {
+    transform: rotate(90deg);
+}
+
+.menu-trigger[data-expanded="false"] span {
+    transform: rotate(0deg);
 }
