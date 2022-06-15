@@ -8,6 +8,66 @@
     </head>
 
     <body>
-        
+        <!-- Todo table with some ui to handle each todo -->
+        <table>
+            <thead>
+                <tr><!-- tr => table row -->
+                    <th>
+                        <input type="checkbox" id="select-all-todos">
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Begin date
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+
+            <!-- tbody => Corps du tableau, les lignes -->
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="todo-1" class="todo-checkbox">
+                    </td>
+                    <td>
+                        First todo
+                    </td>
+                    <td>
+                        15-06-2022
+                    </td>
+                    <td>
+                        <div>
+                            <a href="#" class="btn btn-success menu-trigger" title="Actions">Action</a>
+                            <ul><!-- Unordered list -->
+                                <li><!-- List item-->
+                                    <a href="#" title="Update" class="list-item">Update</a>
+                                </li>
+                                <li><!-- List item-->
+                                    <a href="#" title="Delete" class="list-item">Delete</a>
+                                </li>
+                                <li><!-- List item-->
+                                    <a href="#" title="Mark as done" class="list-item">Mark as done</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td>
+                        0
+                    </td>
+                    <td colspan="3">
+                        todo(s)
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </body>
 </html>
