@@ -6,7 +6,7 @@ import { ButtonGroup } from "./button-group.js";
  */
 class Main {
     constructor() {
-        console.log(`Hello Main class !`);
+        
     }
 
     uiHandler() {

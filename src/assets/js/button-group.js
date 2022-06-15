@@ -14,7 +14,37 @@ export class ButtonGroup {
     init() {
         // Try to get menu-trigger object
         const buttonGroups = document.querySelectorAll('.menu-trigger');
-        console.log(`${buttonGroups.length} button groups`);
+
+        // Sets event handler to each button group
+        buttonGroups.forEach((buttonGroup) => {
+            buttonGroup.addEventListener(
+                'click',
+                (event) => {
+                    // Get next ul following the item clicked (sibling element)
+                    const childNodes = [...event.target.parentNode.childNodes]
+                        .filter((childNode) => childNode.tagName === 'UL');
+                    const optionsList = childNodes[0];
+                    const expandedValue = optionsList.getAttribute('data-expanded');
+                    if (expandedValue === 'true') {
+                        optionsList.setAttribute('data-expanded', false);
+                        optionsList.style.display = 'none';
+                    } else {
+                        optionsList.setAttribute('data-expanded', true);
+                        optionsList.style.display = 'block';
+                    }
+                }
+            )
+        });
+
+        /**
+        for (let i = 0; i < buttonGroups.length; i++) {
+            // Do your stuff here
+        }
+
+        for (const buttonGroup of buttonGroups) {
+            // Do your stuff here
+        }
+        */
     }
 
 }
