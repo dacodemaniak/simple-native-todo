@@ -13,5 +13,8 @@
     "JS"
   ],
   "author": "DaCodeManiaK <jean-luc.aubert@aelion.fr>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "^7.5.5"
+  }
 }
