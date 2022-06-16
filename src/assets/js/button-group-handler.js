@@ -1,4 +1,4 @@
-import * as Rx from 'rxjs';
+
 export class ButtonGroupHandler {
     constructor(buttonGroup) {
         this.buttonGroup = buttonGroup;
