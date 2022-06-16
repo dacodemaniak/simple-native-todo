@@ -1,3 +1,4 @@
+import * as Rx from 'rxjs';
 export class ButtonGroupHandler {
     constructor(buttonGroup) {
         this.buttonGroup = buttonGroup;
@@ -23,5 +24,12 @@ export class ButtonGroupHandler {
                 }
             }
         )
+    }
+
+    initAsObservable() {
+        const observable = Rx.Observable.fromEvent(this.buttonGroup, 'click');
+        const subscription = observable.subscribe((event) => {
+            console.log(`Got a click event on the button`);
+        })
     }
 }
