@@ -2,9 +2,11 @@
 * custom.css
 *   Global design for our app
 */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;1,300&display=swap');
 
 :root {
     --success-color: rgb(13, 145, 4);
+    --succss-color-disabled: rgb(198, 218, 196);
     --warning-color: rgb(225, 120, 29);
 }
 
@@ -14,7 +16,42 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: Lato;
     font-size: 1em; /* Equivalent to 16px default navigator font size */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th { /** Rules factorization */
+    border-bottom-width: 1px;
+    border-bottom-color: #000;
+    border-bottom-style: solid;
+}
+
+table thead tr, table tbody tr {
+    height: 3em;
+}
+
+table thead tr th {
+    border-bottom-width: 2px;
+}
+
+table tfoot tr td { /* Compound rule : règle composée */
+    border-bottom: none;
+}
+
+/**
+* Design button group
+**/
+table tbody tr td div a {
+    text-decoration: none;
+}
+table tbody tr td div ul {
+    display: none;
+    list-style-type: none;
 }
 
 
@@ -44,12 +81,21 @@ a.btn, button.btn {
     font-weight: bold;
 }
 
+a.btn:disabled, button.btn:disabled {
+    color: rgba(128, 128, 128, .7);
+}
+
 a.btn {
     display: block;
 }
+
 a.btn-success, button.btn-success {
     background-color: var(--success-color);
     color: #fff;
+}
+
+a.btn-success:disabled, button.btn-success:disabled {
+    background-color: var(--succss-color-disabled);
 }
 
 a.btn-warning, button.btn-warning {
@@ -95,4 +141,31 @@ div.inner-box img {
     width: inherit;
     height: inherit;
 
+}
+
+/**
+* Design du formulaire
+**/
+div.row {
+    display: flex;
+    margin-bottom: .5em;
+}
+div.input-field input {
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-color: var(--success-color);
+    height: 2em;
+    width: inherit;
+}
+div.input-field input[type="text"] {
+
+}
+
+div.textarea textarea {
+    border: none;
+    width: inherit;
+}
+
+.row .col .s12 {
+    width: 100%;
 }
