@@ -1,5 +1,6 @@
 import { ButtonGroup } from "./button-group.js";
 import { FormHandler } from "./form-handler.js";
+import { RenderTable } from "./render-table.js";
 /**
  * main.js
  *  Entry point of the frontend application
@@ -10,11 +11,16 @@ class Main {
     }
 
     uiHandler() {
-        const buttonGroup = new ButtonGroup();
-        buttonGroup.init();
+
 
         const todoForm = new FormHandler();
         todoForm.init();
+
+        const renderTable = new RenderTable();
+        renderTable.render();
+
+        const buttonGroup = new ButtonGroup();
+        buttonGroup.init();
     }
 }
 
