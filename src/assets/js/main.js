@@ -1,5 +1,4 @@
 import { ButtonGroup } from "./button-group.js";
-
 /**
  * main.js
  *  Entry point of the frontend application
