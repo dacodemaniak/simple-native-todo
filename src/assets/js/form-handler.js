@@ -1,4 +1,5 @@
 import { TodoModel } from "./models/todo-model.js";
+import { TodoService } from "./services/todo-service.js";
 
 export class FormHandler {
     constructor() {
@@ -29,6 +30,7 @@ export class FormHandler {
                     value: null
                 }
             );
+        this.service = new TodoService(); // Instanciation du service
     }
 
     init() {
@@ -61,6 +63,9 @@ export class FormHandler {
                     document.getElementById(key).value = '';
                 });
                 document.getElementById('submit-button').setAttribute('disabled', true);
+
+                // Appeler la méthode add du service
+                this.service.add(todo);
             }
         )
     }
