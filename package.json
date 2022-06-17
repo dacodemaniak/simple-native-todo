@@ -15,6 +15,7 @@
   "author": "DaCodeManiaK <jean-luc.aubert@aelion.fr>",
   "license": "ISC",
   "dependencies": {
+    "materialize-css": "^1.0.0",
     "rxjs": "^7.5.5"
   }
 }
