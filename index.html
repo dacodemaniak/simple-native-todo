@@ -40,33 +40,7 @@
 
             <!-- tbody => Corps du tableau, les lignes -->
             <tbody>
-                <tr>
-                    <td>
-                        <input type="checkbox" id="todo-1" class="todo-checkbox">
-                    </td>
-                    <td>
-                        First todo
-                    </td>
-                    <td>
-                        15-06-2022
-                    </td>
-                    <td>
-                        <div class="button-group">
-                            <a href="#" class="btn btn-success menu-trigger" title="Actions" data-expanded="false">Action <span class="icon-play3"></span></a>
-                            <ul class="action-button" data-expanded="false"><!-- Unordered list -->
-                                <li><!-- List item-->
-                                    <a href="#" title="Update" class="list-item">Update</a>
-                                </li>
-                                <li><!-- List item-->
-                                    <a href="#" title="Delete" class="list-item">Delete</a>
-                                </li>
-                                <li><!-- List item-->
-                                    <a href="#" title="Mark as done" class="list-item">Mark as done</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
+
             </tbody>
 
             <tfoot>
@@ -116,5 +90,34 @@
             </div>
         </div>
 
+        <template id="todo-row">
+            <tr>
+                <td>
+                    <input type="checkbox" id="todo-1" class="todo-checkbox">
+                </td>
+                <td>
+                    First todo
+                </td>
+                <td>
+                    15-06-2022
+                </td>
+                <td>
+                    <div class="button-group">
+                        <a href="#" class="btn btn-success menu-trigger" title="Actions" data-expanded="false">Action <span class="icon-play3"></span></a>
+                        <ul class="action-button" data-expanded="false"><!-- Unordered list -->
+                            <li><!-- List item-->
+                                <a href="#" title="Update" class="list-item">Update</a>
+                            </li>
+                            <li><!-- List item-->
+                                <a href="#" title="Delete" class="list-item">Delete</a>
+                            </li>
+                            <li><!-- List item-->
+                                <a href="#" title="Mark as done" class="list-item">Mark as done</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </template>
     </body>
 </html>
