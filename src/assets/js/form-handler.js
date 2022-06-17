@@ -1,4 +1,5 @@
 import { TodoModel } from "./models/todo-model.js";
+import { RenderTable } from "./render-table.js";
 import { TodoService } from "./services/todo-service.js";
 
 export class FormHandler {
@@ -65,7 +66,9 @@ export class FormHandler {
                 document.getElementById('submit-button').setAttribute('disabled', true);
 
                 // Appeler la méthode add du service
-                this.service.add(todo);
+                const fullTodo = this.service.add(todo);
+
+                new RenderTable().addRow(fullTodo);
             }
         )
     }
