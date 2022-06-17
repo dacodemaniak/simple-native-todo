@@ -81,6 +81,9 @@ a.btn, button.btn {
     font-weight: bold;
 }
 
+form button.btn {
+    height: 3em;
+}
 a.btn:disabled, button.btn:disabled {
     color: rgba(128, 128, 128, .7);
 }

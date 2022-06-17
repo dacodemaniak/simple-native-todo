@@ -82,31 +82,31 @@
         </table>
 
         <!-- Formulaire -->
-        <form class="row">
+        <form class="row" id="todo-form">
             <fieldset class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
                         <label for="todo-title">Titre</label>
-                        <input placeholder="Saisissez le titre du todo" id="todo-title" type="text" class="validate">
+                        <input placeholder="Saisissez le titre du todo" name="todo-title" id="todo-title" type="text" class="validate">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="textarea col s12">
                         <label for="todo-detail">Détail</label>
-                        <textarea id="todo-detail"></textarea>
+                        <textarea id="todo-detail" name="todo-detail"></textarea>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="input-field col s12">
                         <label for="todo-date">Date</label>
-                        <input placeholder="Saisissez le titre du todo" id="todo-date" type="date" class="validate">
+                        <input placeholder="Saisissez le titre du todo" name="todo-date" id="todo-date" type="date" class="validate">
                     </div>
                 </div>
             </fieldset>
             <div class="row">
-                <button class="btn btn-success" type="submit" disabled>Ajouter</button>
+                <button class="btn btn-success" type="submit" id="submit-button" disabled>Ajouter</button>
             </div>
         </form>
 
