@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1 {
+    background-color: aqua;
+    /**
+    * Expression des couleurs
+    *   Hexa court : #000 .. #FFF (safe-palette)
+    *   Hexa long : #000000 .. #FFFFFF
+    *   Couleurs nommées : 54 couleurs (black, white, green, blue, ...)
+    *   Couleurs rgb et rgba * 2 : valeurs absolues ou relatives de rouge, vert et de bleur : 
+    *       rgb(255, 120, 45) | rgb(100%, 60%, 23%) | rgba(255, 120, 45, 0..1) | rgba(100%, 60%, 23%, 0..1)
+    *   Couleurs hsl et hsla (Hue, Saturation, Luminance) :
+    *       hsl(50%, 100, 25) | hsla(50%, 100, 25, 0..1)
+    */
+    font-size: 2em;
+    /**
+    *   Ne jamais utiliser : pc (picat), cm, mm, in, big, bigger, small, smaller
+    *   Avec précaution : px (pixel)
+    *   Pourcentage,
+    *   em, rem : expression relative en fonction de la définition du navigateur (norme : 1em <=> 16px)
+    */
+    font-weight: bold;
+}
+
+p {
+    text-align: justify;
+    font-size: 1em;
+}
+
+#item-list {
+    list-style-type: square;
+    background-color: rgb(80%, 20%, 30%);
+}
+
+.bold-content {
+    font-size: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    font-style: none;
+}
+
+[title] {
+    color:rgb(80%, 20%, 30%);
+}
+
+/**
+* Menu design
+**/
+nav {
+    display: flex;
+}
+
+nav>ul {
+    display: inherit;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav>ul li a[title] {
+    color: hsl(0, 0%, 0%);
+    text-decoration: none;
+    background-color: inherit;
+    transition: background-color 1.5s ease-in 0s, color 1s linear 1s;
+}
+
+nav>ul li a[title]:hover {
+    background-color: #999;
+    color: hsl(255, 100%, 100%);
+}
+
+nav>ul li {
+    border-style: solid;
+    border-width: 1px;
+    width: 10em;
+    margin-right: 0.5em;
+}
+
+nav>ul li a {
+    display: block;
+    width: inherit;
+}
+
+/**
+* Splash screen
+**/
+div.outer-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, .7);
+}
+
+div.outer-box.d-none {
+    animation-name: exit;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+div.inner-box {
+    position: relative;
+    top: 50%;
+    width: 3em;
+    height: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(-50%);
+}
+
+div.inner-box img {
+    display: block;
+    width: inherit;
+    height: inherit;
+
+}
+
+/**
+* Définition d'une animation
+**/
+@keyframes exit {
+    0% {
+        background-color: rgba(128, 128, 128, .9);
+    }
+
+    15% {
+        width: 90%;
+        height: 90%;
+        background-color: rgba(128, 128, 128, 1);
+    }
+
+    30% {
+        width: 70%;
+        height: 70%;
+    }
+
+    45% {
+        width: 50%;
+        height: 50%;
+        background-color: rgba(128, 128, 128, .5);
+    }
+
+    75% {
+        transform: rotate(45deg);
+    }
+
+    85% {
+        transform: rotate(90deg);
+    }
+
+    90% {
+        transform: translateY(-75%);
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}

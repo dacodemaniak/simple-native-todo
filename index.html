@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+        <title>My Todo</title>
+
+        <!-- Sets styles -->
+        <link href="./src/assets/css/custom.css" rel="stylesheet">
+        <link href="./src/assets/css/style.css" rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        >
+
+        <!-- Load JS scripts -->
+        <script src="./src/assets/js/main.js" type="module"></script>
+    </head>
+
+    <body>
+        <!-- Todo table with some ui to handle each todo -->
+        <table>
+            <thead>
+                <tr><!-- tr => table row -->
+                    <th>
+                        <input type="checkbox" id="select-all-todos">
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Begin date
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+
+            <!-- tbody => Corps du tableau, les lignes -->
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="todo-1" class="todo-checkbox">
+                    </td>
+                    <td>
+                        First todo
+                    </td>
+                    <td>
+                        15-06-2022
+                    </td>
+                    <td>
+                        <div class="button-group">
+                            <a href="#" class="btn btn-success menu-trigger" title="Actions" data-expanded="false">Action <span class="icon-play3"></span></a>
+                            <ul class="action-button" data-expanded="false"><!-- Unordered list -->
+                                <li><!-- List item-->
+                                    <a href="#" title="Update" class="list-item">Update</a>
+                                </li>
+                                <li><!-- List item-->
+                                    <a href="#" title="Delete" class="list-item">Delete</a>
+                                </li>
+                                <li><!-- List item-->
+                                    <a href="#" title="Mark as done" class="list-item">Mark as done</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td>
+                        0
+                    </td>
+                    <td colspan="3">
+                        todo(s)
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+
+        <div class="outer-box">
+            <div class="inner-box">
+                <img src="./src/assets/images/loading-buffering.gif" alt="Animation de chargement">
+            </div>
+        </div>
+
+    </body>
+</html>
