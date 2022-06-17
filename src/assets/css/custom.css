@@ -89,3 +89,32 @@ a.btn-warning, button.btn-warning {
 .menu-trigger[data-expanded="false"] span {
     transform: rotate(0deg);
 }
+
+/**
+* Loading animation
+**/
+div.outer-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, .7);
+}
+
+div.inner-box {
+    position: relative;
+    top: 50%;
+    width: 3em;
+    height: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(-50%);
+}
+
+div.inner-box img {
+    display: block;
+    width: inherit;
+    height: inherit;
+
+}
