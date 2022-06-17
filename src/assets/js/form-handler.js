@@ -1,3 +1,5 @@
+import { TodoModel } from "./models/todo-model.js";
+
 export class FormHandler {
     constructor() {
         this.formFields = new Map();
@@ -6,19 +8,25 @@ export class FormHandler {
             .set(
                 'todo-title',
                 {
-                    required: true
+                    required: true,
+                    property: 'title',
+                    value: null
                 }
             )
             .set(
                 'todo-detail',
                 {
-                    required: false
+                    required: false,
+                    property: 'detail',
+                    value: null
                 }
             )
             .set(
                 'todo-date',
                 {
-                    required: true
+                    required: true,
+                    property: 'date',
+                    value: null
                 }
             );
     }
@@ -42,6 +50,12 @@ export class FormHandler {
             'submit',
             (event) => {
                 event.preventDefault(); // Empêche les données du formulaire de partir vers le serveur
+                const todo = new TodoModel();
+                this.formFields.forEach((field, key) => {
+                    todo[field.property] = field.value;
+
+                });
+                console.log(`Todo about to persist : ${JSON.stringify(todo)}`);
             }
         )
     }
@@ -51,9 +65,14 @@ export class FormHandler {
 
         const button = document.getElementById('submit-button');
         // Boucler sur un map
-        this.formFields.forEach((value, key) => {
-            if (value.required) {
-                const field = document.getElementById(key);
+        this.formFields.forEach((fieldObject, key) => {
+            const field = document.getElementById(key);
+
+            // Range la valeur saisie dans l'attribut du champ dans le Map
+            fieldObject.value = field.value.trim();
+
+            if (fieldObject.required) {
+                
                 if (field.value.trim() === '') {
                     isChecked = false;
                 }
