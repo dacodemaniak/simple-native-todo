@@ -5,12 +5,16 @@ export class TodoService {
         this.repository = new TodoRepository(); // Injection de dépendance
     }
 
-    findAll() {}
+    findAll() {
+        return this.repository.findAll();
+    }
     
     add(todo) {
         todo.id = this.repository.nextId();
         console.log(`Service says : ${JSON.stringify(todo)}`);
         this.repository.add(todo);
+
+        return todo;
     }
 
     update(todo) {}
