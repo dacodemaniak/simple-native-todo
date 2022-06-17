@@ -55,7 +55,12 @@ export class FormHandler {
                     todo[field.property] = field.value;
 
                 });
-                console.log(`Todo about to persist : ${JSON.stringify(todo)}`);
+                // Effacer les champs du formulaire
+                this.formFields.forEach((field, key) => {
+                    field.value = '';
+                    document.getElementById(key).value = '';
+                });
+                document.getElementById('submit-button').setAttribute('disabled', true);
             }
         )
     }
